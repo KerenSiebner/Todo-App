@@ -1,3 +1,8 @@
 :root {
-    --main-bg-color: lightblue;
+    --main-bg-color: rgb(207, 201, 201);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url('../../fonts/Roboto/Roboto-Regular.ttf');
 }

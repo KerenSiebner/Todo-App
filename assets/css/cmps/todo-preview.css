@@ -1,7 +1,23 @@
-.active{
-    color:blue
+.todo-active{
+    background-color: #fdab3d;
 }
 
-.done{
-    color: green
+.todo-done{
+    background-color:  #03c875;
+}
+
+.todo-status{
+    text-align: center;
+    color: white;
+    line-height: 36px;
+}
+
+.checkbox{
+    height: 1.5em;
+    vertical-align: middle;
+    margin-top:8px;
+}
+
+.todo-txt-done{
+    text-decoration: line-through;
 }

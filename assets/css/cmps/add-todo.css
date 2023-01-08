@@ -1,0 +1,21 @@
+.add-todo{
+padding: 10px;
+text-align: center;
+}
+
+#txt{
+width: 40vw;
+height: 1.5em;
+padding: 5px;
+font-family: inherit;
+}
+
+.add-btn{
+    background-color: #0073ea;
+    color: whitesmoke;
+    border: none;
+    height: 34px;
+    width: 34px;
+    border-radius: 3px;
+    margin-left: 2px;
+}

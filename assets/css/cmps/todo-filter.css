@@ -1,0 +1,14 @@
+.todo-filter{
+    text-align: center;
+    font-family: inherit;
+}
+
+#status {
+    padding: 5px;
+}
+
+#searchtxt{
+    padding: 5px;
+    margin-left: 5px;
+    width: 170px;
+}

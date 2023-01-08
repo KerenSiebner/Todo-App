@@ -16,3 +16,5 @@
 @import './cmps/user-msg.css';
 @import './cmps/todo-preview.css';
 @import './cmps/todo.list.css';
+@import './cmps/add-todo.css';
+@import './cmps/todo-filter.css';

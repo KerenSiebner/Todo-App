@@ -1,47 +1,20 @@
-import { userService } from "../services/user.service.js"
 
-export const SET_TODOS = 'SET_TODOS'
-export const REMOVE_TODO = 'REMOVE_TODO'
-export const ADD_TODO = 'ADD_TODO'
-export const UPDATE_TODO = 'UPDATE_TODO'
-export const SET_USER = 'SET_USER'
-export const UPDATE_USER = 'UPDATE_USER'
+import {todoReducer} from './todo.reducer.js'
+import {userReducer} from './user.reducer.js'
 
-const { createStore } = Redux
+const { createStore , combineReducers} = Redux
+const middleware = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()
 
-const initialState = {
-    todos: [],
-    user: userService.getLoggedinUser()
-}
 
-function appReducer(state = initialState, action) {
-    let todos
-
-    switch (action.type) {
-        case SET_TODOS:
-            return { ...state, todos: action.todos }
-        case REMOVE_TODO:
-            todos = state.todos.filter(c => c._id !== action.todoId)
-            return { ...state, todos }
-        case ADD_TODO:
-            todos = [...state.todos]
-            todos.unshift(action.todo)
-            return { ...state, todos: todos }
-        case UPDATE_TODO:
-            todos = state.todos.map(todo => todo._id === action.todo._id ? action.todo : todo)
-            return { ...state, todos }
-
-        // User
-        case SET_USER:
-            return { ...state, user: action.user }
-        default:
-            return { ...state }
-    }
-}
-
-export const store = createStore(appReducer)
+const rootReducer = combineReducers({
+    todoModule: todoReducer,
+    userModule: userReducer
+})
+export const store = createStore(rootReducer, middleware)
 
 // For debug only!
 store.subscribe(() => {
-    console.log('Current state is:', store.getState())
+    console.log('**** Store state changed: ****')
+    console.log('storeState:\n', store.getState())
+    console.log('*******************************')
 })
